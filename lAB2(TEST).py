@@ -5,6 +5,7 @@ choice = input("""Виберіть що хочеш:
 2 - Сортувати за абеткою
 Твій вибір  : """)
 
+ttxDict = []
 
 def countstr(leter):
     d = {}
@@ -19,7 +20,7 @@ while choice == "1":
     ttx = input("""Введіть ваше речення  : 
         """).replace('%', '').replace('$', '').replace('@', '').replace('*', '').replace('.', '').replace('!',
                                                                                                           '').replace(
-        '&', '').replace('#', '').replace(';', '').replace('(', '').replace(')', '').replace(' ','').strip()
+        '&', '').replace('#', '').replace('^','').replace(';', '').replace('(', '').replace(')', '').replace(' ','').replace('0','').replace('1','').replace('2','').replace('3','').replace('4','').replace('5','').replace('6','').replace('7','').replace('8','').replace('9','').strip()
     countstr(ttx)
     print("Програма виконана свою роботу! ")
     print("Щоб продовжити натисніть - 1")
@@ -35,11 +36,12 @@ while choice == "2":
     print("Ви обрали посортувати слова в словниковому порядку")
     ttx = input("""Введіть ваше речення  : 
     """).replace('%', '').replace('$', '').replace('@', '').replace('*', '').replace('.', '').replace('!', '').replace(
-        '&', '').replace('#', '').replace(';', '').replace('(', '').replace(')', '')
+        '&', '').replace('#', '').replace(';', '').replace('(', '').replace(')', '').replace('№','').replace('^','').replace('0','').replace('1','').replace('2','').replace('3','').replace('4','').replace('5','').replace('6','').replace('7','').replace('8','').replace('9','')
     ttx = ttx
     ttx = ttx.split()
-    ttx = sorted(ttx)
-    print(ttx)
+    ttxDict = dict.fromkeys(ttx, 1)
+    ttxDict = sorted(ttxDict)
+    print(ttxDict)
     print("Програма виконана свою роботу!")
     print("Щоб продовжити натисніть - 1")
     print("Для виходу натисніть - 2")
